@@ -17,13 +17,4 @@ class ContactsController extends Controller
         $contacts->save();
         return "Your message succesfully sended";
     }
-
-    // $contacts = new Contacts();
-    // $contacts->name = $req->input('name');
-    // $contacts->email = $req->input('email');
-    // $contacts->message = $req->input('message');
-
-    // $contacts->save();
-
-    // return redirect()->route('contacts');
 }

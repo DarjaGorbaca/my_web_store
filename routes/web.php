@@ -42,9 +42,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/products/create', [ProductController::class, 'createNewProduct'])->name('products.create');
+    // Route::get('/products/create', [ProductController::class, 'createNewProduct'])->name('products.create');
 
-    Route::post('/product/store', [ProductController::class, 'storeProducts'])->name('products.store');
+    // Route::post('/product/store', [ProductController::class, 'storeProducts'])->name('products.store');
 
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -55,9 +55,9 @@ Route::middleware([
 
 Route::get('/products', [ProductController::class, 'getAllProducts'])->name('products');
 
-// Route::get('/products/create', [ProductController::class, 'createNewProduct'])->name('products.create');
+Route::get('/products/create', [ProductController::class, 'createNewProduct'])->name('products.create');
 
-// Route::post('/product/store', [ProductController::class, 'storeProducts'])->name('products.store');
+Route::post('/product/store', [ProductController::class, 'storeProducts'])->name('products.store');
 
 // Route::get('/products/edit/{product}', [ProductController::class, 'editProducts'])->name('products.edit');
 
@@ -79,10 +79,11 @@ Route::get('/product_details/{id}', [ProductController::class, 'getProductsById'
 // For cart
 Route::get('/checkout', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('/checkout', [CartController::class, 'addToCart'])->name('cart.store');
-Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
-Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+Route::get('remove/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('increase', [CartController::class, 'increaseQuantity'])->name('increase');
+// Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 //Buy products
 
-Route::post('buy', [CartController::class, 'buyProducts'])->name('cart.buy');
+Route::post('/buy', [CartController::class, 'buyProducts'])->name('cart.buy');
+Route::post('/place-order', [CartController::class, 'makeOrder'])->name('cart.place-order');

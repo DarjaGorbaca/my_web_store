@@ -15,7 +15,6 @@ class CartController extends Controller
     {
         $cartItems = Cart::getContent();
 
-        // dd($cartItems);
         return view('cart.checkout', compact('cartItems'));
     }
 
@@ -38,44 +37,33 @@ class CartController extends Controller
     }
 
 
-    public function updateCart(Request $request)
+
+    public function removeCart($id)
     {
-        Cart::update(
-            $request->id,
-            [
-                'quantity' => [
-                    'relative' => false,
-                    'value' => $request->quantity
-                ],
-            ]
-        );
 
-        session()->flash('success', 'Item Cart is Updated Successfully !');
 
-        return redirect()->route('cart.list');
-    }
-
-    public function removeCart(Request $request)
-    {
-        Cart::remove($request->id);
+        Cart::remove($id);
         session()->flash('success', 'Item Cart Remove Successfully !');
 
         return redirect()->route('cart.list');
     }
 
-    public function clearAllCart()
-    {
-        Cart::clear();
 
-        session()->flash('success', 'All Item Cart Clear Successfully !');
-
-        return redirect()->route('products');
-    }
 
     public function buyProducts(Request $request)
     {
 
-        DB::table('products')->decrement('stock');
+        foreach ($request->all() as $key => $value) {
+
+            if (strpos($key, 'quantity_') !== false) {
+                $id = substr($key, 9);
+                $product = Product::find($id);
+
+                $product->decrement('stock', $value);
+
+                $product->save();
+            }
+        }
         Cart::clear();
 
 

@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -66,47 +67,12 @@ class ProductController extends Controller
         return view('product_details', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function editProducts(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function updateProducts(Request $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function deleteProducts(Product $product)
-    {
-        $product->delete();
-
-        return "Product was succesfully deleted";
-    }
 
     public function getUnsplash()
     {
         $client = new Client();
 
-        $apiKey = 'sl6IRyXj9LopyYIPz7hBdpia1SOVKzSS2BGkdWVwTUs';
+        $apiKey = 'a31FdPeysKMlvp1rrr6S90_JvZUF5PNNrAYXL-4HHZU';
         $count =  4;
         $query = 'headphones';
         $orientation = 'portrait';
