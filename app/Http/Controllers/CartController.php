@@ -33,7 +33,7 @@ class CartController extends Controller
 
         ]);
 
-        return redirect()->route('products');
+        return redirect()->back();
     }
 
 

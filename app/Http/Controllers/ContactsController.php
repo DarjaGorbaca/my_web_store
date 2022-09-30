@@ -15,6 +15,6 @@ class ContactsController extends Controller
         $contacts->email = $request->email;
         $contacts->message = $request->message;
         $contacts->save();
-        return "Your message succesfully sended";
+        return redirect()->back()->with('status', 'Your message is succesfully sended');
     }
 }

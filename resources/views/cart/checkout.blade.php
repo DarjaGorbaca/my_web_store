@@ -27,7 +27,10 @@
                     <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ">Price</h3>
                     <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ">Total</h3>
                 </div>
-                @if (empty($cartItems->items))
+                @if (Cart::getContent()->isEmpty())
+                <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                    <span class="font-medium">Your Cart is Empty!</span>
+                  </div>
                 @endif
                 <form action="{{ route('cart.buy') }}" method="POST">
                     @csrf
@@ -49,7 +52,7 @@
                                 <input type="button" value="-" class="decrement-btn text-gray-600 w-3"
                                     style="cursor: pointer">
                                 <input name="quantity_{{ $item->id }}"
-                                    class="quantity-input qty-input mx-2 border text-center w-10" type="number"
+                                    class="quantity-input qty-input mx-2 border text-center w-10" type="text"
                                     value="{{ $item->quantity }}">
                                 <input type="button" class="increment-btn text-gray-600 w-3" value="+" style="cursor: pointer">
                             </div>
@@ -86,10 +89,10 @@
                     <button name="checkout"
                         class="bg-black font-semibold hover:bg-gray-700 py-3 text-sm text-white uppercase w-full">Checkout</button>
                 </div>
-            </form>
             </div>
         </div>
     </div>
+
     <script>
         $(function() {
             $(".increment-btn").click(function() {
@@ -113,4 +116,3 @@
 </body>
 
 </html>
-<script src="{{ url('js/add.js') }}"></script>

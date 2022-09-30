@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="w-1200">
-        <img src="{{ asset('slide.jpg') }}" alt="">
+        <img src="{{ asset('slide.jpg') }}" class="rounded-lg" alt="">
             </div>
         </div>
     </section>
@@ -43,29 +43,6 @@
             <h2 class="text-4xl font-bold text-center"> THE TOP SELLERS</h2>
             <p class="mt-2 text-center text-gray-500 ">You bring the music, we bring the quality</p>
         </div>
-
-            {{-- <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
-                <div class="flex flex-col items-center p-6 space-y-6 rounded-sm bg-gray-300 md:w-1/3">
-                <img src="{{ asset('slide.jpg') }}" class="w-18 mt-16 " alt="">
-                <h5 class="text-lg font-bold">BEOPLAY PORTAL</h5>
-                <p class="text-sm text-darkGrayishBlue"></p>
-                Xbox. PlayStation. PC. Mobile. It’s all fair game to Beoplay Portal. Enter new worlds with advanced noise cancelling, crystal clear chat and immersive surround sound.
-                <a href="#" class="p-3 px-6 pt-2 justify-center whitespace-nowrap rounded-full border border-transparent bg-black text-base font-medium text-white shadow-sm hover:bg-gray-800">Buy</a>
-                </div> --}}
-                {{-- <div class="hidden flex-col items-center p-6 space-y-6 rounded-sm bg-gray-300 md:flex md:w-1/3">
-                    <img src="{{ asset('slide.jpg') }}" class="w-18 mt-16 " alt="">
-                    <h5 class="text-lg font-bold">BEOPLAY H95</h5>
-                    <p class="text-sm text-darkGrayishBlue"></p>
-                    Moving, masterful, mesmerising. Get lost in your music with adjustable noise-cancelling headphones that redefine grab-and-go listening.
-                    <a href="#" class="p-3 px-6 pt-2 justify-center whitespace-nowrap rounded-full border border-transparent bg-black text-base font-medium text-white shadow-sm hover:bg-gray-800">Buy</a>
-                </div> --}}
-                {{-- <div class="hidden flex-col items-center p-6 space-y-6 rounded-sm bg-gray-300 md:flex md:w-1/3">
-                    <img src="{{ asset('slide.jpg') }}" class="w-18 mt-16 " alt="">
-                    <h5 class="text-lg font-bold">BEOPLAY HX</h5>
-                    <p class="text-sm text-darkGrayishBlue"></p>
-                    Wireless noise-cancelling headphones. Listen in comfort whether you're on a call, working from home or taking a moment for yourself.
-                        <a href="#" class="p-3 px-6 pt-2 justify-center whitespace-nowrap rounded-full border border-transparent bg-black text-base font-medium text-white shadow-sm hover:bg-gray-800">Buy</a>
-                    </div> --}}
             <div class="my-16">
                 <div class="px-6 columns-3 gap-4">
                     @foreach ($products as $product)
@@ -106,7 +83,7 @@
                 </div>
             </div>
             <div class="w-900">
-                <img src="{{ asset('design.jpg') }}" alt="">
+                <img src="{{ asset('design.jpg') }}" class="rounded-lg" alt="">
            </div>
         </div>
     </section>

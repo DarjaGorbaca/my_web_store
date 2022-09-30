@@ -18,12 +18,11 @@
             <a href="{{ route('home') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
             <a href="{{ route('about') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">About</a>
             <a href="{{ route('products') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">Products</a>
-            <a href="{{ route('products.create') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">Create New Product</a>
+            {{-- <a href="{{ route('products.create') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">Create New Product</a> --}}
             <a href="{{ route('contacts') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">Contacts</a>
         </div>
         <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <a href="{{ route('login') }}" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Login</a>
-            <a href="{{ route('register') }}" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-800">Register</a>
+            <a href="{{ route('products.create') }}" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-800">Form</a>
             <form action="" method="post">
                 @csrf
             <a href="{{ 'checkout' }}"><span class="material-symbols-outlined ml-4 text-4xl">
